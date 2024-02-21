@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>カメラ映像表示デモ</title>
+</head>
+<body>
+    <h2>カメラ映像表示デモ</h2>
+    <video id="camera-stream" autoplay playsinline width="640" height="480"></video>
+    <script>
+        const videoElement = document.getElementById('camera-stream');
+
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                videoElement.srcObject = stream;
+            } catch (error) {
+                console.error('カメラのアクセスに失敗しました: ', error);
+            }
+        }
+
+        startCamera();
+    </script>
+</body>
+</html>
