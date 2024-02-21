@@ -2,10 +2,18 @@
 <html>
 <head>
     <title>カメラ映像表示デモ</title>
+    <style>
+        /* ビデオ要素を画面いっぱいに表示するスタイル */
+        #camera-stream {
+            width: 100vw; /* ビューポートの幅全体に */
+            height: 100vh; /* ビューポートの高さ全体に */
+            object-fit: cover; /* アスペクト比を保ちつつ、コンテナ全体を埋める */
+        }
+    </style>
 </head>
 <body>
     <h2>カメラ映像表示デモ</h2>
-    <video id="camera-stream" autoplay playsinline width="640" height="480"></video>
+    <video id="camera-stream" autoplay playsinline></video>
     <script>
         const videoElement = document.getElementById('camera-stream');
 
